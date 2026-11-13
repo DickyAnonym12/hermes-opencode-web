@@ -1,0 +1,277 @@
+/* =============================
+   Karthula — Kebakaran Hutan dan Lahan
+   ============================= */
+
+:root {
+  --bg: #f4f3ee;
+  --bg-alt: #e9e6da;
+  --ink: #1f2a24;
+  --muted: #5c6b5f;
+  --green: #0db80b;
+  --green-dark: #0a8a0a;
+  --green-deep: #086808;
+  --fire: #ff6b1a;
+  --fire-dark: #c44a00;
+  --card: #ffffff;
+  --line: #d5dcc8;
+  --footer-bg: #0f2a24;
+  --footer-text: #d4e0d4;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Segoe UI", "Noto Sans", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--green-dark); text-decoration: none; }
+a:hover { color: var(--fire); text-decoration: underline; }
+
+/* Header */
+.site-header {
+  background: var(--footer-bg);
+  color: #fff;
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-toggle {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.35);
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.main-nav {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  color: var(--footer-text);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: .95rem;
+}
+
+.main-nav a:hover { color: #fff; background: rgba(255,255,255,.1); }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #0f2a1f, #1a4a2a);
+  color: #fff;
+  padding: 48px 20px 56px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.hero > p {
+  max-width: 640px;
+  margin: 0 auto;
+  opacity: .92;
+}
+
+/* Sections */
+.section {
+  padding: 48px 20px;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--green-deep);
+  margin-bottom: 12px;
+}
+
+.section > p,
+.section > ul,
+.section > .impact-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section p {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 16px;
+  padding: 0 20px;
+}
+
+/* Content list */
+.section ul {
+  max-width: 860px;
+  margin: 12px auto 16px;
+  padding-left: 24px;
+  text-align: left;
+}
+
+.section li {
+  margin-bottom: 8px;
+}
+
+.section li strong {
+  color: var(--green-dark);
+}
+
+/* Impact grid */
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.impact-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 22px;
+}
+
+.impact-card h3 {
+  color: var(--green-dark);
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.impact-card p {
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+/* Accordion */
+.accordion {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.acc-item {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.acc-header {
+  width: 100%;
+  text-align: left;
+  padding: 16px 20px;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--green-dark);
+  background: var(--bg-alt);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.acc-header .acc-toggle {
+  color: var(--fire);
+  font-size: 1.1rem;
+  transition: transform .2s;
+}
+
+.acc-item.open .acc-header .acc-toggle { transform: rotate(180deg); }
+
+.acc-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease;
+}
+
+.acc-item.open .acc-content {
+  max-height: 500px;
+}
+
+.acc-content p {
+  padding: 0 20px 16px;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+/* Sumber Data */
+.sumber ul {
+  max-width: 860px;
+  padding-left: 24px;
+  text-align: left;
+  margin: 8px auto 12px;
+}
+
+.sumber li { margin-bottom: 6px; }
+
+/* Footer */
+.site-footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 32px 0 24px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.footer-inner p {
+  font-size: .9rem;
+  opacity: .85;
+  margin: 4px 0;
+}
+
+/* Mobile */
+@media (max-width: 820px) {
+  .header-inner { flex-direction: column; align-items: flex-start; }
+  .main-nav { width: 100%; display: none; }
+  .main-nav.open { display: flex; }
+  .main-nav.closed { display: none; }
+  .main-nav a { padding: 4px 8px; font-size: .9rem; }
+  .hero { padding: 36px 16px 44px; }
+  .hero h1 { font-size: 1.7rem; }
+  .hero > p { font-size: .95rem; }
+}
+
+@media (max-width: 600px) {
+  .section { padding: 32px 16px; }
+  .impact-grid { grid-template-columns: 1fr; }
+}

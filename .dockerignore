@@ -1,0 +1,6 @@
+site-lama/
+Dockerfile
+docker-compose.yml
+*.log
+.DS_Store
+

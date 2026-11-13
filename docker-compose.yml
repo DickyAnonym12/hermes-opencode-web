@@ -1,0 +1,7 @@
+services:
+  kartula:
+    build: .
+    image: kartula:local
+    ports:
+      - "8080:80"
+    restart: unless-stopped
