@@ -1,33 +1,50 @@
 :root {
+  --bg: #ffffff;
+  --bg-elev: #f6f4ef;
+  --bg-card: #ffffff;
+  --text: #1a1a1a;
+  --text-dim: #555555;
+  --text-faint: #9a9a9a;
+  --accent: #ff6b2c;
+  --accent-soft: #ff8a4e;
+  --accent-glow: rgba(255, 107, 44, 0.38);
+  --smoke: #888888;
+  --line: #e2ddd0;
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+  --font: "Segoe UI", "Noto Sans JP", system-ui, -apple-system, sans-serif;
+}
+
+/* --- Warm white (default light theme) --- */
+[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-elev: #f6f4ef;
+  --bg-card: #ffffff;
+  --text: #1a1a1a;
+  --text-dim: #555555;
+  --text-faint: #9a9a9a;
+  --accent: #e05620;
+  --accent-soft: #ff8a4e;
+  --accent-glow: rgba(224, 86, 32, 0.28);
+  --smoke: #888888;
+  --line: #e2ddd0;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+}
+
+/* --- Dark warm (toggle) --- */
+[data-theme="dark"] {
   --bg: #14110f;
   --bg-elev: #1a1612;
   --bg-card: #221d15;
   --text: #f5efe2;
   --text-dim: #c9bfab;
   --text-faint: #8a7e6c;
-  --accent: #ff6b2c;
-  --accent-soft: #ff8a4e;
-  --accent-glow: rgba(255, 107, 44, 0.35);
+  --accent: #ff8a4e;
+  --accent-soft: #ff6b2c;
+  --accent-glow: rgba(255, 107, 44, 0.38);
   --smoke: #a89f8c;
   --line: #362e22;
-  --radius: 14px;
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
-  --font: "Segoe UI", "Noto Sans JP", system-ui, -apple-system, sans-serif;
-}
-
-[data-theme="light"] {
-  --bg: #f5f1e8;
-  --bg-elev: #ece6da;
-  --bg-card: #ffffff;
-  --text: #2a241c;
-  --text-dim: #5b4f3e;
-  --text-faint: #8a7e6c;
-  --accent: #e05620;
-  --accent-soft: #ff8a4e;
-  --accent-glow: rgba(224, 86, 32, 0.25);
-  --smoke: #8a7e6c;
-  --line: #d8cdb8;
-  --shadow: 0 8px 20px rgba(60, 45, 20, 0.16);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -174,7 +191,7 @@ body {
   background:
     radial-gradient(55% 35% at 82% 18%, var(--accent-glow), transparent 60%),
     radial-gradient(45% 45% at 18% 82%, var(--accent-glow), transparent 60%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg-elev) 58%, #15110d 100%);
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-elev) 58%, #f0ece3 100%);
   pointer-events: none;
 }
 .hero-inner {
@@ -256,7 +273,7 @@ main { padding: 44px 0 70px; }
 }
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.10);
   border-color: var(--accent-soft);
 }
 .card h3 {
